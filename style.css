@@ -427,6 +427,86 @@ body {
     min-height: 130px;
 }
 
+/* ─── POLICY PAGES ──────────────────────────────────────── */
+
+.policy-page {
+    padding: 9rem 0 6rem;
+}
+
+.policy__header {
+    margin-bottom: 3.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.policy__title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.policy__meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.policy__body {
+    max-width: 720px;
+}
+
+.policy__body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 0.85rem;
+}
+
+.policy__body p {
+    color: var(--text-body);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.policy__body ul {
+    color: var(--text-body);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.policy__body li {
+    margin-bottom: 0.35rem;
+}
+
+.policy__body a {
+    color: var(--text-primary);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    text-decoration: none;
+    transition: border-color 0.18s;
+}
+
+.policy__body a:hover {
+    border-color: rgba(255,255,255,0.55);
+}
+
+.policy__sign-off {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.policy__sign-off p {
+    color: var(--text-body);
+    font-size: 0.92rem;
+    line-height: 1.8;
+}
+
 /* ─── FOOTER ────────────────────────────────────────────── */
 
 .footer {
@@ -447,6 +527,25 @@ body {
     font-size: 0.75rem;
     color: var(--text-muted);
     line-height: 1.6;
+}
+
+.footer__links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.footer__link {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.18s, border-color 0.18s;
+}
+
+.footer__link:hover {
+    color: #888888;
+    border-color: #888888;
 }
 
 /* ─── RESPONSIVE ────────────────────────────────────────── */
