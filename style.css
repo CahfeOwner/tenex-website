@@ -167,6 +167,13 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero__text {
+    max-width: 500px;
+    width: 100%;
 }
 
 .hero__headline {
@@ -490,6 +497,14 @@ body {
 
     .hero {
         padding-bottom: 4.5rem;
+    }
+
+    .hero__content {
+        justify-content: flex-start;
+    }
+
+    .hero__text {
+        max-width: 100%;
     }
 
     .steps {
