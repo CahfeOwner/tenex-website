@@ -19,6 +19,12 @@
                 <span class="nav__logo-tenex">TENEX</span>
                 <span class="nav__logo-sub">Business Performance</span>
             </div>
+            <ul class="nav__links">
+                <li><a href="#about" class="nav__link">About</a></li>
+                <li><a href="#services" class="nav__link">Services</a></li>
+                <li><a href="#how-we-work" class="nav__link">How we work</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
             <a href="#contact" class="btn btn--outline">Get in touch</a>
         </div>
     </nav>
@@ -104,23 +110,33 @@
     <!-- HOW WE WORK -->
     <section class="section" id="how-we-work">
         <div class="container">
-            <p class="section__label">How we work</p>
-            <h2 class="section__heading">No jargon. No wasted time. Real results.</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step__num">01</div>
-                    <h3 class="step__title">Understand first</h3>
-                    <p class="step__body">We spend time learning your business before suggesting anything. Every engagement starts with listening — not with a pre-packaged solution.</p>
+            <div class="timeline">
+                <div class="timeline__heading">
+                    <p class="section__label">How we work</p>
+                    <h2 class="timeline__title">No jargon.<br>No wasted time.<br>Real results.</h2>
                 </div>
-                <div class="step">
-                    <div class="step__num">02</div>
-                    <h3 class="step__title">Identify what matters</h3>
-                    <p class="step__body">We focus on the problems worth solving — the ones costing you time, money or growth. Not everything needs fixing; the skill is knowing what does.</p>
-                </div>
-                <div class="step">
-                    <div class="step__num">03</div>
-                    <h3 class="step__title">Act and measure</h3>
-                    <p class="step__body">We work alongside you to implement change — and we track what it delivers. Outcomes, not outputs. Results you can point to.</p>
+                <div class="timeline__steps">
+                    <div class="timeline__step">
+                        <div class="timeline__num">01</div>
+                        <div class="timeline__content">
+                            <h3 class="timeline__step-title">Understand first</h3>
+                            <p class="timeline__step-body">We spend time learning your business before suggesting anything. Every engagement starts with listening — not with a pre-packaged solution.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__step">
+                        <div class="timeline__num">02</div>
+                        <div class="timeline__content">
+                            <h3 class="timeline__step-title">Identify what matters</h3>
+                            <p class="timeline__step-body">We focus on the problems worth solving — the ones costing you time, money or growth. Not everything needs fixing; the skill is knowing what does.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__step">
+                        <div class="timeline__num">03</div>
+                        <div class="timeline__content">
+                            <h3 class="timeline__step-title">Act and measure</h3>
+                            <p class="timeline__step-body">We work alongside you to implement change — and we track what it delivers. Outcomes, not outputs. Results you can point to.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -159,8 +175,21 @@
                             <input class="form__input" type="email" id="email" name="email" required>
                         </div>
                         <div class="form__group">
+                            <label class="form__label" for="interest">Area of interest</label>
+                            <select class="form__input form__select" id="interest" name="interest">
+                                <option value="" disabled selected></option>
+                                <option>Business Performance</option>
+                                <option>AI Adoption &amp; Governance</option>
+                                <option>Governance, Risk &amp; Compliance</option>
+                                <option>Exit Readiness</option>
+                                <option>Fractional CRO</option>
+                                <option>Data &amp; MI Architecture</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
                             <label class="form__label" for="message">Tell us about your business</label>
-                            <textarea class="form__input form__textarea" id="message" name="message" rows="5" required></textarea>
+                            <textarea class="form__input form__textarea" id="message" name="message" rows="4" required></textarea>
                         </div>
                         <button type="submit" class="btn btn--primary btn--full">Send message</button>
                     </form>
@@ -171,19 +200,36 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="container footer__inner">
-            <div class="nav__logo">
-                <span class="nav__logo-tenex">TENEX</span>
-                <span class="nav__logo-sub">Business Performance</span>
+        <div class="container">
+            <div class="footer__top">
+                <div class="nav__logo">
+                    <span class="nav__logo-tenex">TENEX</span>
+                    <span class="nav__logo-sub">Business Performance</span>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__nav-col">
+                        <h4 class="footer__nav-heading">Services</h4>
+                        <a href="#services" class="footer__nav-link">Business Performance</a>
+                        <a href="#services" class="footer__nav-link">AI Adoption &amp; Governance</a>
+                        <a href="#services" class="footer__nav-link">Governance, Risk &amp; Compliance</a>
+                        <a href="#services" class="footer__nav-link">Exit Readiness</a>
+                        <a href="#services" class="footer__nav-link">Fractional CRO</a>
+                        <a href="#services" class="footer__nav-link">Data &amp; MI Architecture</a>
+                    </div>
+                    <div class="footer__nav-col">
+                        <h4 class="footer__nav-heading">Company</h4>
+                        <a href="#about" class="footer__nav-link">About</a>
+                        <a href="#how-we-work" class="footer__nav-link">How we work</a>
+                        <a href="#contact" class="footer__nav-link">Contact</a>
+                        <a href="privacy-policy.html" class="footer__nav-link">Privacy Policy</a>
+                        <a href="modern-slavery.html" class="footer__nav-link">Modern Slavery Statement</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer__legal">
+            <div class="footer__bottom">
                 <p>Tenex Business Performance Limited. Company No. 16796831. Registered in England &amp; Wales.</p>
                 <p>Registered office: c/o Robert Whowell &amp; Partners LLP, 78 Loughborough Road, Quorn, Loughborough LE12 8DX</p>
                 <p>&copy; 2026 Tenex Business Performance Limited. All rights reserved.</p>
-            </div>
-            <div class="footer__links">
-                <a href="privacy-policy.html" class="footer__link">Privacy Policy</a>
-                <a href="modern-slavery.html" class="footer__link">Modern Slavery Statement</a>
             </div>
         </div>
     </footer>
