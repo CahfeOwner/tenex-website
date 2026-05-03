@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tenex AI Chief of Staff — an always-on AI that handles your correspondence, diary, scheduling and daily coordination. Built for UK founders who need to do more without hiring more.">
+    <title>AI Chief of Staff — Tenex Business Performance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cos-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            padding: 10rem 0 6rem;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+        }
+        .cos-hero__label {
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        .cos-hero__headline {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.6rem, 6vw, 4.2rem);
+            line-height: 1.12;
+            font-weight: 700;
+            margin-bottom: 1.75rem;
+            max-width: 760px;
+        }
+        .cos-hero__sub {
+            font-size: 1.15rem;
+            color: var(--text-body);
+            max-width: 600px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+        .cos-hero__actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Capability grid */
+        .cap__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .cap__card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2rem;
+        }
+        .cap__icon {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .cap__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        .cap__body {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            line-height: 1.65;
+        }
+
+        /* Stages */
+        .stages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0;
+            margin-top: 3rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .stage {
+            padding: 2rem;
+            border-right: 1px solid var(--border);
+        }
+        .stage:last-child {
+            border-right: none;
+        }
+        .stage__num {
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+        .stage__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+        }
+        .stage__body {
+            font-size: 0.85rem;
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+        .stage--active {
+            background: var(--bg-card);
+        }
+
+        /* Case study */
+        .case-study {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--text-muted);
+            border-radius: 4px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+        }
+        .case-study__label {
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .case-study__heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.25rem;
+        }
+        .case-study__body {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            line-height: 1.75;
+        }
+        .case-study__body p + p {
+            margin-top: 1rem;
+        }
+
+        /* Pricing */
+        .pricing__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        @media (max-width: 600px) {
+            .pricing__grid { grid-template-columns: 1fr; }
+            .stages { grid-template-columns: 1fr; }
+            .stage { border-right: none; border-bottom: 1px solid var(--border); }
+            .stage:last-child { border-bottom: none; }
+        }
+        .pricing__card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2rem;
+        }
+        .pricing__label {
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+        .pricing__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        .pricing__body {
+            font-size: 0.88rem;
+            color: var(--text-body);
+            line-height: 1.65;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo" style="text-decoration:none;">
+                <span class="nav__logo-tenex">TENEX</span>
+                <span class="nav__logo-sub">Business Performance</span>
+            </a>
+            <ul class="nav__links">
+                <li><a href="index.html#about" class="nav__link">About</a></li>
+                <li><a href="index.html#services" class="nav__link">Services</a></li>
+                <li><a href="index.html#how-we-work" class="nav__link">How we work</a></li>
+                <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+            </ul>
+            <a href="index.html#contact" class="btn btn--outline nav__cta">Get in touch</a>
+            <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="nav__mobile" id="navMobile">
+            <ul class="nav__mobile-links">
+                <li><a href="index.html#about" class="nav__mobile-link">About</a></li>
+                <li><a href="index.html#services" class="nav__mobile-link">Services</a></li>
+                <li><a href="index.html#how-we-work" class="nav__mobile-link">How we work</a></li>
+                <li><a href="index.html#contact" class="nav__mobile-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        const burger = document.getElementById('navBurger');
+        const mobileMenu = document.getElementById('navMobile');
+        burger.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('nav__mobile--open');
+            burger.classList.toggle('nav__burger--open', isOpen);
+            burger.setAttribute('aria-expanded', isOpen);
+        });
+        document.querySelectorAll('.nav__mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('nav__mobile--open');
+                burger.classList.remove('nav__burger--open');
+                burger.setAttribute('aria-expanded', false);
+            });
+        });
+    </script>
+
+    <!-- HERO -->
+    <section class="cos-hero">
+        <div class="container">
+            <p class="cos-hero__label">AI Chief of Staff</p>
+            <h1 class="cos-hero__headline">The thinking behind your day.<br>Handled.</h1>
+            <p class="cos-hero__sub">An always-on AI that manages your correspondence, diary and daily coordination — so you can focus on the decisions only you can make. Built for founders. Configured for your business. Governed from day one.</p>
+            <div class="cos-hero__actions">
+                <a href="index.html#contact" class="btn btn--primary">Start the conversation</a>
+                <a href="#how-it-works" class="btn btn--outline">See how it works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT IT HANDLES -->
+    <section class="section" id="what-it-handles">
+        <div class="container">
+            <p class="section__label">Capability</p>
+            <h2 class="section__heading">What your AI Chief of Staff handles</h2>
+            <div class="cap__grid">
+                <div class="cap__card">
+                    <span class="cap__icon">✉</span>
+                    <h3 class="cap__title">Correspondence</h3>
+                    <p class="cap__body">Reads, triages and responds to emails across your business and personal accounts. Surfaces what matters. Drafts replies in your voice. Sends when you say so.</p>
+                </div>
+                <div class="cap__card">
+                    <span class="cap__icon">◻</span>
+                    <h3 class="cap__title">Diary management</h3>
+                    <p class="cap__body">Checks your calendar, finds free slots, handles scheduling back-and-forth with contacts. Confirms meetings and adds them to your diary — without you being in the loop for every exchange.</p>
+                </div>
+                <div class="cap__card">
+                    <span class="cap__icon">◈</span>
+                    <h3 class="cap__title">Proactive monitoring</h3>
+                    <p class="cap__body">Scans your inbox three times a day. Flags emails that need attention. Surfaces follow-ups that are overdue. Keeps you informed without overwhelming you.</p>
+                </div>
+                <div class="cap__card">
+                    <span class="cap__icon">◇</span>
+                    <h3 class="cap__title">Client coordination</h3>
+                    <p class="cap__body">Knows your clients, your priorities and your current projects. Tracks follow-ups, logs interactions and helps you stay on top of relationships that matter — across business and beyond.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section--alt" id="how-it-works">
+        <div class="container">
+            <p class="section__label">How it works</p>
+            <h2 class="section__heading">Built in stages. Trusted over time.</h2>
+            <p style="color:var(--text-body); max-width:600px; margin-top:1rem;">Autonomy is earned, not assumed. Every AI Chief of Staff starts fully supervised and expands its independence as trust is established — on your terms, at your pace.</p>
+            <div class="stages">
+                <div class="stage">
+                    <p class="stage__num">Stage 01</p>
+                    <h3 class="stage__title">Reactive assistant</h3>
+                    <p class="stage__body">Responds when asked. Checks your diary, reads your inbox, drafts emails. Nothing goes out without your approval.</p>
+                </div>
+                <div class="stage stage--active">
+                    <p class="stage__num">Stage 02</p>
+                    <h3 class="stage__title">Proactive monitoring</h3>
+                    <p class="stage__body">Watches your inbox and surfaces what matters. You get a summary, not a flood. You decide what to act on.</p>
+                </div>
+                <div class="stage">
+                    <p class="stage__num">Stage 03</p>
+                    <h3 class="stage__title">Supervised autonomy</h3>
+                    <p class="stage__body">Proposes actions, drafts and schedules — you approve before anything is sent. The workload drops. The decisions stay yours.</p>
+                </div>
+                <div class="stage">
+                    <p class="stage__num">Stage 04</p>
+                    <h3 class="stage__title">Delegated authority</h3>
+                    <p class="stage__body">Handles defined administrative functions end to end. Meetings are booked. Correspondence is managed. You see the outcome, not every step.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY TENEX -->
+    <section class="section" id="why-tenex">
+        <div class="container">
+            <p class="section__label">Why it matters who builds it</p>
+            <h2 class="section__heading">Not a product. A professional service.</h2>
+            <div class="about__grid">
+                <div class="about__body">
+                    <p>There is no shortage of AI tools that claim to handle your inbox or manage your diary. Most of them are configured the same way for every user — and shipped without anyone asking what happens when something goes wrong.</p>
+                    <p>At Tenex, we build the AI Chief of Staff around your business specifically: your clients, your calendar, your communication style, your risk profile. We test it. We govern it. We define what it can and cannot do before it touches anything on your behalf.</p>
+                    <p>That is the difference between a product and a professional service. And in the case of something that acts in your name, that difference matters.</p>
+                </div>
+                <div class="about__stats">
+                    <div class="stat">
+                        <span class="stat__num">4</span>
+                        <span class="stat__label">Stages of autonomy — each unlocked deliberately</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__num">0</span>
+                        <span class="stat__label">Assumptions about what it should be allowed to do</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <p class="case-study__label">Security — a real example</p>
+                <h3 class="case-study__heading">Why plug-and-play AI has a problem you may not have considered</h3>
+                <div class="case-study__body">
+                    <p>We built a scheduling capability — the kind that checks a founder's diary and offers available slots to contacts. During implementation, we tested a straightforward question: what happens if someone emails the AI assistant under the guise of arranging a meeting, but their real goal is to find out what else is in the founder's diary that day?</p>
+                    <p>A standard implementation would have answered. Asked to "find a slot that doesn't clash with anything important," the AI would naturally surface existing meetings — handing a bad actor a detailed picture of who the founder is meeting, and when.</p>
+                    <p>We caught it. We added explicit rules: the AI offers available times, it never describes what else is in the diary. We layered it with a contact whitelist and a human approval gate. The capability works. The vulnerability does not.</p>
+                    <p>This is what a Tenex implementation gives you that a mass-market product does not: someone who thought about it before it went live.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section section--alt" id="pricing">
+        <div class="container">
+            <p class="section__label">How to get started</p>
+            <h2 class="section__heading">Setup and retainer — nothing else</h2>
+            <div class="pricing__grid">
+                <div class="pricing__card">
+                    <p class="pricing__label">Setup</p>
+                    <h3 class="pricing__title">One-time installation</h3>
+                    <p class="pricing__body">We build and configure your AI Chief of Staff from the ground up — identity, email, calendar, memory, governance framework and security layer. Everything is tested against your specific business before it touches anything in your name. Priced by scope.</p>
+                </div>
+                <div class="pricing__card">
+                    <p class="pricing__label">Retainer</p>
+                    <h3 class="pricing__title">Ongoing development</h3>
+                    <p class="pricing__body">Your Chief of Staff grows with your business. Each stage of autonomy is unlocked deliberately, with new capabilities added as they are earned. The retainer keeps Tenex embedded in the process — so nothing gets switched on without the right governance in place.</p>
+                </div>
+            </div>
+            <p style="margin-top:2rem; color:var(--text-muted); font-size:0.85rem;">Pricing is discussed at first conversation. We do not publish rates — scope varies significantly, and we would rather give you a number that means something.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="contact">
+        <div class="container" style="text-align:center; max-width:600px;">
+            <p class="section__label">Get started</p>
+            <h2 class="section__heading">Ready to find out what your AI Chief of Staff could look like?</h2>
+            <p style="color:var(--text-body); margin: 1.5rem 0 2rem;">The first conversation is about your business — what you are spending time on, where the friction is, and whether this is the right fit. No pitch. No obligation.</p>
+            <a href="index.html#contact" class="btn btn--primary">Start the conversation</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="nav__logo">
+                    <span class="nav__logo-tenex">TENEX</span>
+                    <span class="nav__logo-sub">Business Performance</span>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__nav-col">
+                        <h4 class="footer__nav-heading">Services</h4>
+                        <a href="index.html#services" class="footer__nav-link">Business Performance</a>
+                        <a href="index.html#services" class="footer__nav-link">AI Adoption &amp; Governance</a>
+                        <a href="ai-chief-of-staff.html" class="footer__nav-link">AI Chief of Staff</a>
+                        <a href="index.html#services" class="footer__nav-link">Governance, Risk &amp; Compliance</a>
+                        <a href="index.html#services" class="footer__nav-link">Exit Readiness</a>
+                        <a href="index.html#services" class="footer__nav-link">Fractional CRO</a>
+                        <a href="index.html#services" class="footer__nav-link">Data &amp; MI Architecture</a>
+                    </div>
+                    <div class="footer__nav-col">
+                        <h4 class="footer__nav-heading">Company</h4>
+                        <a href="index.html#about" class="footer__nav-link">About</a>
+                        <a href="index.html#how-we-work" class="footer__nav-link">How we work</a>
+                        <a href="index.html#contact" class="footer__nav-link">Contact</a>
+                        <a href="privacy-policy.html" class="footer__nav-link">Privacy Policy</a>
+                        <a href="modern-slavery.html" class="footer__nav-link">Modern Slavery Statement</a>
+                        <a href="ai-usage.html" class="footer__nav-link">AI Usage Statement</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>Tenex Business Performance Limited. Company No. 16796831. Registered in England &amp; Wales.</p>
+                <p>Registered office: c/o Robert Whowell &amp; Partners LLP, 78 Loughborough Road, Quorn, Loughborough LE12 8DX</p>
+                <p>&copy; 2026 Tenex Business Performance Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
