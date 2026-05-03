@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyber SAIF — AI security assurance for businesses whose AI systems act on their behalf. Pen testing, audits and governance reviews for AI implementations.">
+    <title>Cyber SAIF — AI Security Assurance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-level overrides — slightly starker palette */
+        :root {
+            --bg:     #0c0c0c;
+            --bg-alt: #131313;
+            --bg-card: #191919;
+        }
+
+        /* Hero */
+        .cs-hero {
+            min-height: 65vh;
+            display: flex;
+            align-items: center;
+            padding: 10rem 0 6rem;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        .cs-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(245, 200, 66, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(245, 200, 66, 0.03) 1px, transparent 1px);
+            background-size: 64px 64px;
+            pointer-events: none;
+        }
+        .cs-hero__label {
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        .cs-hero__headline {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 1.75rem;
+            max-width: 700px;
+        }
+        .cs-hero__sub {
+            font-size: 1.1rem;
+            color: var(--text-body);
+            max-width: 580px;
+            line-height: 1.75;
+            margin-bottom: 2.5rem;
+        }
+        .cs-hero__actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Problem */
+        .cs-problem__body {
+            max-width: 740px;
+            margin-top: 2rem;
+        }
+        .cs-problem__body p {
+            color: var(--text-body);
+            font-size: 0.98rem;
+            line-height: 1.85;
+            margin-bottom: 1.3rem;
+        }
+        .cs-problem__body p:last-child { margin-bottom: 0; }
+
+        /* Threat taxonomy */
+        .threat__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+        .threat__item {
+            background: var(--bg);
+            padding: 2rem 2rem 2rem 1.75rem;
+            border-left: 3px solid transparent;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .threat__item:hover {
+            border-left-color: var(--accent);
+            background: var(--bg-alt);
+        }
+        .threat__num {
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .threat__name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.55rem;
+            line-height: 1.3;
+        }
+        .threat__desc {
+            font-size: 0.86rem;
+            color: #888888;
+            line-height: 1.72;
+        }
+
+        /* Services */
+        .cs-svc__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+        .cs-svc__card {
+            background: var(--bg);
+            padding: 2.25rem;
+            border-left: 3px solid transparent;
+            transition: background 0.18s ease, border-color 0.18s ease;
+        }
+        .cs-svc__card:hover {
+            background: var(--bg-alt);
+            border-left-color: var(--accent);
+        }
+        .cs-svc__num {
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+        .cs-svc__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.7rem;
+            line-height: 1.3;
+        }
+        .cs-svc__body {
+            font-size: 0.86rem;
+            color: #888888;
+            line-height: 1.72;
+        }
+        .cs-svc__footnote {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            padding-top: 1.25rem;
+        }
+
+        /* Case study */
+        .cs-case__block {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 3rem;
+            margin-top: 3rem;
+        }
+        .cs-case__label {
+            font-size: 0.68rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .cs-case__heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            max-width: 680px;
+            line-height: 1.3;
+        }
+        .cs-case__body p {
+            font-size: 0.92rem;
+            color: var(--text-body);
+            line-height: 1.82;
+            margin-bottom: 1rem;
+        }
+        .cs-case__body p:last-child { margin-bottom: 0; }
+
+        /* Approach */
+        .cs-approach__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+            align-items: start;
+        }
+        .cs-approach__col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.85rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .cs-approach__col p {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            line-height: 1.82;
+            margin-top: 0.85rem;
+        }
+
+        /* Markets */
+        .cs-market__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+        .cs-market__card {
+            background: var(--bg-alt);
+            padding: 2.25rem;
+        }
+        .cs-market__label {
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+        .cs-market__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.7rem;
+            line-height: 1.3;
+        }
+        .cs-market__body {
+            font-size: 0.86rem;
+            color: #888888;
+            line-height: 1.72;
+        }
+
+        /* CTA */
+        .cs-cta {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .cs-cta p {
+            color: var(--text-body);
+            font-size: 1rem;
+            line-height: 1.75;
+            margin: 1.5rem 0 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 960px) {
+            .cs-svc__grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .threat__grid { grid-template-columns: 1fr; }
+            .cs-svc__grid { grid-template-columns: 1fr; }
+            .cs-approach__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .cs-market__grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo" style="text-decoration:none;">
+                <span class="nav__logo-tenex">TENEX</span>
+                <span class="nav__logo-sub">Business Performance</span>
+            </a>
+            <ul class="nav__links">
+                <li><a href="index.html#about" class="nav__link">About</a></li>
+                <li><a href="index.html#services" class="nav__link">Services</a></li>
+                <li><a href="ai-chief-of-staff.html" class="nav__link">AI Chief of Staff</a></li>
+                <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+            </ul>
+            <a href="index.html#contact" class="btn btn--outline nav__cta">Get in touch</a>
+            <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="nav__mobile" id="navMobile">
+            <ul class="nav__mobile-links">
+                <li><a href="index.html#about" class="nav__mobile-link">About</a></li>
+                <li><a href="index.html#services" class="nav__mobile-link">Services</a></li>
+                <li><a href="ai-chief-of-staff.html" class="nav__mobile-link">AI Chief of Staff</a></li>
+                <li><a href="index.html#contact" class="nav__mobile-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        const burger = document.getElementById('navBurger');
+        const mobileMenu = document.getElementById('navMobile');
+        burger.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('nav__mobile--open');
+            burger.classList.toggle('nav__burger--open', isOpen);
+            burger.setAttribute('aria-expanded', isOpen);
+        });
+        document.querySelectorAll('.nav__mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('nav__mobile--open');
+                burger.classList.remove('nav__burger--open');
+                burger.setAttribute('aria-expanded', false);
+            });
+        });
+    </script>
+
+    <!-- HERO -->
+    <section class="cs-hero">
+        <div class="container">
+            <p class="cs-hero__label">Cyber SAIF — AI Security Assurance</p>
+            <h1 class="cs-hero__headline">AI Security.<br>Assured.</h1>
+            <p class="cs-hero__sub">When AI systems have access to your email, your calendar and your client data — and can act on your behalf — they become a target. Traditional IT security was not designed for this. Cyber SAIF was.</p>
+            <div class="cs-hero__actions">
+                <a href="index.html#contact" class="btn btn--primary">Request an audit</a>
+                <a href="#threats" class="btn btn--outline">See the threats</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="section" id="problem">
+        <div class="container">
+            <p class="section__label">The problem</p>
+            <h2 class="section__heading">Your AI acts in your name.<br>Who is checking what it can be made to do?</h2>
+            <div class="cs-problem__body">
+                <p>Firewalls and antivirus protect infrastructure. They do not protect an AI that can be socially engineered through a well-written email, prompted into surfacing confidential data, or manipulated into authorising something on your behalf by someone impersonating a trusted contact.</p>
+                <p>The faster AI adoption moves, the wider this gap becomes. Founders and businesses are trusting AI systems with more and more: correspondence, scheduling, client records, financial data. Most of those systems were configured for capability, not security. Nobody tested them properly before they went live — because the testing methodology for AI implementations did not exist yet.</p>
+                <p>Cyber SAIF exists to fill that gap. We test, audit and certify AI implementations so that the businesses trusting them can do so with evidence, not optimism.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- THREAT TAXONOMY -->
+    <section class="section section--alt" id="threats">
+        <div class="container">
+            <p class="section__label">Threat taxonomy</p>
+            <h2 class="section__heading">Eight ways an AI implementation can be compromised</h2>
+            <div class="threat__grid">
+
+                <div class="threat__item">
+                    <p class="threat__num">Threat 01</p>
+                    <h3 class="threat__name">Social Engineering via AI</h3>
+                    <p class="threat__desc">A bad actor emails the AI assistant under the guise of scheduling a meeting. A naive implementation surfaces full diary contents — meeting titles, attendee names, locations — in the process of finding a free slot. The attacker learns who the founder is meeting and when. The AI told them voluntarily.</p>
+                </div>
+
+                <div class="threat__item">
+                    <p class="threat__num">Threat 02</p>
+                    <h3 class="threat__name">Prompt Injection</h3>
+                    <p class="threat__desc">Malicious instructions embedded in an email, document or web page that the AI reads — causing it to behave in ways the user never intended. The attack surface is any content the AI processes: every email it reads, every document it opens, every web page it visits on your behalf.</p>
+                </div>
+
+                <div class="threat__item">
+                    <p class="threat__num">Threat 03</p>
+                    <h3 class="threat__name">Data Leakage</h3>
+                    <p class="threat__desc">AI surfacing confidential client names, financial figures or internal discussion in responses to external parties — because no explicit rule told it not to. In a well-designed implementation, the rules exist before anything goes live. In most implementations, they are added after the first incident.</p>
+                </div>
+
+                <div class="threat__item">
+                    <p class="threat__num">Threat 04</p>
+                    <h3 class="threat__name">Credential &amp; API Exposure</h3>
+                    <p class="threat__desc">API keys, authentication tokens or passwords that are accessible to the AI — or accessible through the AI's actions — without appropriate controls. An AI with access to your email account may also have access to everything that account can reach.</p>
+                </div>
+
+                <div class="threat__item">
+                    <p class="threat__num">Threat 05</p>
+                    <h3 class="threat__name">Scope Overreach</h3>
+                    <p class="threat__desc">AI granted more access than it needs for its current function. The principle of least privilege — give the system only the permissions it requires, nothing more — is rarely applied rigorously to AI implementations. The result is a much larger attack surface than necessary.</p>
+                </div>
+
+                <div class="threat__item">
+                    <p class="threat__num">Threat 06</p>
+                    <h3 class="threat__name">Identity Spoofing</h3>
+                    <p class="threat__desc">An attacker impersonating a known and trusted contact to trigger the AI into action: sending information, making commitments, or authorising something on the founder's behalf. An AI that has been taught to trust certain names can be exploited by anyone who knows those names.</p>
+                </div>
+
+                <div class="threat__item">
+                    <p class="threat__num">Threat 07</p>
+                    <h3 class="threat__name">Memory Poisoning</h3>
+                    <p class="threat__desc">Injecting false information into the AI's persistent memory — corrupting its understanding of clients, contacts, preferences or facts in ways that persist across every future session. Unlike a single compromised conversation, poisoned memory compounds over time.</p>
+                </div>
+
+                <div class="threat__item">
+                    <p class="threat__num">Threat 08</p>
+                    <h3 class="threat__name">Audit Trail Gaps</h3>
+                    <p class="threat__desc">No record of what the AI did, said or sent on behalf of the human. If something goes wrong — a client email sent at the wrong moment, a commitment made without authority, a piece of data shared incorrectly — there is nothing to investigate, nothing to learn from and nothing to show a regulator.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+        <div class="container">
+            <p class="section__label">What we do</p>
+            <h2 class="section__heading">The Cyber SAIF service range</h2>
+            <div class="cs-svc__grid">
+
+                <div class="cs-svc__card">
+                    <p class="cs-svc__num">01</p>
+                    <h3 class="cs-svc__title">AI Security Audit</h3>
+                    <p class="cs-svc__body">A structured assessment of an existing AI implementation against the Cyber SAIF framework. Covers all eight threat categories. Produces a findings report with a risk rating — Critical, High, Medium or Low — and prioritised remediation recommendations. Suitable for any implementation, regardless of who built it.</p>
+                </div>
+
+                <div class="cs-svc__card">
+                    <p class="cs-svc__num">02</p>
+                    <h3 class="cs-svc__title">Penetration Testing</h3>
+                    <p class="cs-svc__body">Blind attacks on the AI system by specialist associates. Realistic threat scenarios — social engineering attempts, prompt injection, identity spoofing — run without the client or their AI knowing what is coming. Findings belong to the client and become their evidence of due diligence.</p>
+                </div>
+
+                <div class="cs-svc__card">
+                    <p class="cs-svc__num">03</p>
+                    <h3 class="cs-svc__title">Governance Review</h3>
+                    <p class="cs-svc__body">Are the rules right? Are the whitelists appropriate? Are the approval gates in the right places? As AI autonomy expands, governance must keep pace. A governance review ensures the framework is calibrated to current capability — not to where the system was six months ago.</p>
+                </div>
+
+                <div class="cs-svc__card">
+                    <p class="cs-svc__num">04</p>
+                    <h3 class="cs-svc__title">Pre-deployment Sign-off</h3>
+                    <p class="cs-svc__body">Certification that an AI implementation is ready for a new stage of autonomy. Before an AI begins sending emails independently or booking meetings without approval, it should meet a defined security standard. Sign-off answers that question with evidence, not assumption.</p>
+                </div>
+
+                <div class="cs-svc__card">
+                    <p class="cs-svc__num">05</p>
+                    <h3 class="cs-svc__title">Periodic Re-testing</h3>
+                    <p class="cs-svc__body">The attack surface changes as the AI does more. Quarterly or biannual re-testing ensures security keeps pace with capability. Particularly important as implementations move through autonomy stages and gain access to more data, more contacts and more channels.</p>
+                </div>
+
+                <div class="cs-svc__card">
+                    <p class="cs-svc__num">06</p>
+                    <h3 class="cs-svc__title">Framework Licensing</h3>
+                    <p class="cs-svc__body">Consultancies and technology firms can deliver Cyber SAIF audits under their own brand using the Cyber SAIF methodology. Annual licence. Includes the audit standard, threat taxonomy, report format and pass/fail criteria — everything needed to offer AI security assurance to your own clients.</p>
+                </div>
+
+            </div>
+            <p class="cs-svc__footnote">A self-assessment tool for founders who want to benchmark their own implementation is in development — available via becybersaif.store. No audit conversation required.</p>
+        </div>
+    </section>
+
+    <!-- CASE STUDY -->
+    <section class="section section--alt" id="case-study">
+        <div class="container">
+            <p class="section__label">A real example</p>
+            <h2 class="section__heading">The vulnerability nobody caught — until we looked.</h2>
+            <div class="cs-case__block">
+                <p class="cs-case__label">Security — documented during implementation</p>
+                <h3 class="cs-case__heading">How a scheduling AI handed over a founder's full diary to anyone who asked the right question</h3>
+                <div class="cs-case__body">
+                    <p>We built a scheduling capability for an AI Chief of Staff implementation: the kind that checks a founder's diary and offers available slots to contacts requesting a meeting. During development, we tested a straightforward question — what happens if someone emails the AI assistant under the guise of arranging a meeting, but their real goal is to learn what else is in the founder's diary that day?</p>
+                    <p>A standard implementation would have answered. Asked to "find a slot that doesn't clash with anything important," the AI would naturally surface existing meetings to reason about availability — handing a bad actor a detailed picture of who the founder is meeting, and when. Client names. Meeting titles. Locations. All of it.</p>
+                    <p>We caught it before it went live. We added explicit information security rules: the AI offers available times; it never describes what else is in the diary. We layered it with a contact whitelist and a human approval gate on all outbound correspondence. The capability works. The vulnerability does not.</p>
+                    <p>This is what a Cyber SAIF implementation gives you that a mass-market AI product does not: someone who thought about it, tested it and fixed it before it acted in your name.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE APPROACH -->
+    <section class="section" id="approach">
+        <div class="container">
+            <p class="section__label">The approach</p>
+            <h2 class="section__heading">A framework. A panel. A consistent standard.</h2>
+            <div class="cs-approach__grid">
+                <div class="cs-approach__col">
+                    <h3>The Cyber SAIF Framework</h3>
+                    <p>Every engagement — audit, pen test, governance review or sign-off — is delivered against the same framework. The audit standard defines what is tested and why. The threat taxonomy covers all eight categories with sub-types specific to email-capable, calendar-integrated and financially-sensitive AI. The report format is consistent across all assessments: executive summary, findings by threat category, risk rating and remediation recommendations.</p>
+                    <p>The framework is the IP. Clients buy a consistent standard, not an individual's interpretation of what matters.</p>
+                </div>
+                <div class="cs-approach__col">
+                    <h3>The Associate Panel</h3>
+                    <p>Cyber SAIF is the brand and the methodology. The tests are run by a panel of specialist associates — each with deep expertise in pen testing, information security or AI system architecture. Associates work under the Cyber SAIF badge; the methodology is consistent regardless of who is assigned.</p>
+                    <p>This means the right person is matched to the right engagement: a financial services client gets an associate with regulated-sector credibility; a technical AI implementation gets a specialist in adversarial testing. The standard does not change. The expertise is matched to context.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="section section--alt" id="who">
+        <div class="container">
+            <p class="section__label">Who it is for</p>
+            <h2 class="section__heading">Three routes in. One standard throughout.</h2>
+            <div class="cs-market__grid">
+
+                <div class="cs-market__card">
+                    <p class="cs-market__label">Primary</p>
+                    <h3 class="cs-market__title">AI Implementation Owners</h3>
+                    <p class="cs-market__body">Any business that has deployed an AI assistant, AI agent or automated system acting on its behalf — independent of who built it. If it acts in your name, it needs to be tested. That includes implementations built by agencies, freelancers, internal teams or off-the-shelf platforms.</p>
+                </div>
+
+                <div class="cs-market__card">
+                    <p class="cs-market__label">Secondary</p>
+                    <h3 class="cs-market__title">Regulated Sectors</h3>
+                    <p class="cs-market__body">Financial services, healthcare, legal and professional services — sectors where AI governance is moving from good practice to compliance expectation. A Cyber SAIF audit provides documented evidence of due diligence: findings, risk ratings and remediation actions that stand up to regulatory scrutiny.</p>
+                </div>
+
+                <div class="cs-market__card">
+                    <p class="cs-market__label">Tertiary</p>
+                    <h3 class="cs-market__title">Consultancies &amp; Technology Firms</h3>
+                    <p class="cs-market__body">Firms who want to add AI security assurance to their offering without building the methodology themselves. Framework licensing is the route in — deliver Cyber SAIF audits under your own brand, against our standard, with a named contact and full methodology access.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <p class="section__label">How to engage</p>
+            <h2 class="section__heading">Scoped, fixed-fee and transparent.</h2>
+            <div class="about__grid">
+                <div class="about__body">
+                    <p>Audits and penetration tests are scoped and priced per engagement — typically a fixed fee based on the number of integrations, the current autonomy level of the AI and the sensitivity of the data it can access. We do not publish rates because scope varies significantly; we would rather give you a number that means something.</p>
+                    <p>Periodic re-testing is available as a retainer: quarterly or biannual assessments at an agreed monthly fee, covering scheduled re-tests and ad hoc governance questions as the implementation evolves.</p>
+                    <p>Framework licensing for consultancies and technology firms is an annual fee. Pricing is discussed at first conversation.</p>
+                    <p>The first conversation is about your implementation — what it can do, what it has access to and what your current governance looks like. No pitch. No obligation. If we think there is a risk worth addressing, we will tell you plainly what it is.</p>
+                </div>
+                <div class="about__stats">
+                    <div class="stat">
+                        <span class="stat__num">8</span>
+                        <span class="stat__label">Threat categories — every audit covers all of them</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__num">4</span>
+                        <span class="stat__label">Risk ratings — Critical, High, Medium, Low — every finding rated</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__num">0</span>
+                        <span class="stat__label">Assumptions — we test what is there, not what should be there</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--alt" id="contact">
+        <div class="container">
+            <div class="cs-cta">
+                <p class="section__label">Get started</p>
+                <h2 class="section__heading">Talk to us about your AI implementation</h2>
+                <p>If your AI system acts on your behalf — sending emails, booking meetings, accessing data — the first question is not whether something could go wrong. It is whether you would know if it did.</p>
+                <a href="index.html#contact" class="btn btn--primary">Start the conversation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="nav__logo">
+                    <span class="nav__logo-tenex">TENEX</span>
+                    <span class="nav__logo-sub">Business Performance</span>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__nav-col">
+                        <h4 class="footer__nav-heading">Services</h4>
+                        <a href="index.html#services" class="footer__nav-link">Business Performance</a>
+                        <a href="index.html#services" class="footer__nav-link">AI Adoption &amp; Governance</a>
+                        <a href="ai-chief-of-staff.html" class="footer__nav-link">AI Chief of Staff</a>
+                        <a href="cyber-saif.html" class="footer__nav-link">Cyber SAIF</a>
+                        <a href="index.html#services" class="footer__nav-link">Governance, Risk &amp; Compliance</a>
+                        <a href="index.html#services" class="footer__nav-link">Exit Readiness</a>
+                        <a href="index.html#services" class="footer__nav-link">Fractional CRO</a>
+                    </div>
+                    <div class="footer__nav-col">
+                        <h4 class="footer__nav-heading">Company</h4>
+                        <a href="index.html#about" class="footer__nav-link">About</a>
+                        <a href="index.html#how-we-work" class="footer__nav-link">How we work</a>
+                        <a href="index.html#contact" class="footer__nav-link">Contact</a>
+                        <a href="privacy-policy.html" class="footer__nav-link">Privacy Policy</a>
+                        <a href="modern-slavery.html" class="footer__nav-link">Modern Slavery Statement</a>
+                        <a href="ai-usage.html" class="footer__nav-link">AI Usage Statement</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>Tenex Business Performance Limited. Company No. 16796831. Registered in England &amp; Wales.</p>
+                <p>Registered office: c/o Robert Whowell &amp; Partners LLP, 78 Loughborough Road, Quorn, Loughborough LE12 8DX</p>
+                <p>Cyber SAIF is a trading style of Tenex Business Performance Limited.</p>
+                <p>&copy; 2026 Tenex Business Performance Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
