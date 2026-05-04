@@ -38,6 +38,11 @@
             background-size: 64px 64px;
             pointer-events: none;
         }
+        .cs-hero__logo {
+            width: 200px;
+            margin-bottom: 2.5rem;
+            display: block;
+        }
         .cs-hero__label {
             font-size: 0.7rem;
             letter-spacing: 0.14em;
@@ -276,6 +281,7 @@
             .cs-svc__grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
+            .cs-hero__logo { width: 160px; }
             .threat__grid { grid-template-columns: 1fr; }
             .cs-svc__grid { grid-template-columns: 1fr; }
             .cs-approach__grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -333,7 +339,7 @@
     <!-- HERO -->
     <section class="cs-hero">
         <div class="container">
-            <p class="cs-hero__label">Cyber SAIF — AI Security Assurance</p>
+            <img src="images/cybersaif-stacked-light.png" alt="Cyber SAIF" class="cs-hero__logo">
             <h1 class="cs-hero__headline">AI Security.<br>Assured.</h1>
             <p class="cs-hero__sub">When AI systems have access to your email, your calendar and your client data — and can act on your behalf — they become a target. Traditional IT security was not designed for this. Cyber SAIF was.</p>
             <div class="cs-hero__actions">
