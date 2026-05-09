@@ -16,7 +16,7 @@ Our approach: understand the business first, then act. We identify what is holdi
 
 ## The AI adoption problem we solve
 
-Research from Microsoft's Work Trend Index shows only 4% of organisations have both the individual AI capability and the organisational readiness to use it effectively. Most organisations fail in one of three ways:
+Microsoft's 2026 Work Trend Index found that only 19% of AI users sit in the "Frontier" zone — where individual capability and organisational readiness genuinely reinforce each other. Organisational factors account for more than twice the impact of individual mindset and behaviour. Most organisations fail in one of three ways:
 
 1. Buy and hope — tools are purchased, nothing changes, because the work is never redesigned
 2. Delegate and disconnect — the AI mandate goes to one person or team without the authority to change how the rest of the organisation works
