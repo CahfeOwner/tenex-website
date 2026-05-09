@@ -46,6 +46,16 @@ Tenex is the embedded alternative to all three. We build capability that stays i
 
 Leicestershire, UK. Serving clients nationally across the United Kingdom.
 
+## Case studies (anonymised)
+
+Three live engagements described in detail at /case-studies.html:
+
+1. Hospitality — multi-site restaurant group: automated MI pipeline, daily flash reporting across 7 sites before 8am, 5 company-wide KPIs, weekly trading and period P&L in development.
+
+2. Professional services / construction — specialist bid consultancy: AI-enabled bid operating system built on Microsoft 365 Copilot, 22-step APMP-validated process, 20% time saving confirmed on live government framework bid, AI governance framework compliant with PPN 017/25.
+
+3. Food manufacturing — growth-stage manufacturer: 124-item employer compliance platform, 3D digital facility model, supply agreement for major export order, financial analysis and governance infrastructure toward a structured exit.
+
 ## Contact
 
 Email: info@tenexbp.co.uk
