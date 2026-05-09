@@ -1,0 +1,52 @@
+# Tenex Business Performance
+
+Tenex Business Performance Limited is a UK management consultancy helping SME founders and regulated businesses improve performance, adopt AI responsibly, and build businesses worth selling.
+
+## Who we are
+
+Founded by David McWhir, with over 38 years of experience across UK regulated industries including financial services, hospitality, care, manufacturing, professional services and construction. Registered in England and Wales (Company No. 16796831). Based in Leicestershire, UK. Working nationally across the UK.
+
+## What we do
+
+We work with two types of client:
+1. Founder-led SMEs that have outgrown the early stages and need to run better
+2. Established financial services businesses navigating strategic change — AI adoption, operational transformation, regulatory pressure, or building toward a transaction
+
+Our approach: understand the business first, then act. We identify what is holding performance back before recommending any solution. When AI features in our work, the capability we build stays inside the client's business, not ours.
+
+## The AI adoption problem we solve
+
+Research from Microsoft's Work Trend Index shows only 4% of organisations have both the individual AI capability and the organisational readiness to use it effectively. Most organisations fail in one of three ways:
+
+1. Buy and hope — tools are purchased, nothing changes, because the work is never redesigned
+2. Delegate and disconnect — the AI mandate goes to one person or team without the authority to change how the rest of the organisation works
+3. Outsource and exit — a consultancy delivers a strategy; the knowledge stays with them, not the client
+
+Tenex is the embedded alternative to all three. We build capability that stays inside the business.
+
+## Services
+
+- Business Performance Review — structured diagnosis of where a business is losing time, money or momentum, with a clear action plan
+- AI Strategic Assessment — structured diagnostic to establish AI capability and organisational readiness; identifies which failure modes apply and what to address first
+- AI Adoption & Governance — building the organisational infrastructure that makes AI work in a specific business context; not a technology project, a business improvement programme
+- AI Chief of Staff — an always-on AI that handles correspondence, diary and daily coordination; built around the client's business, governed from day one, trusted in stages (see /ai-chief-of-staff.html)
+- Cyber SAIF — AI security assurance; pen testing, audits and governance reviews for businesses whose AI systems act on their behalf (see /cyber-saif.html)
+- Governance, Risk & Compliance — GRC frameworks for regulated sectors that protect the business without creating administrative overhead
+- Exit Readiness — building a business that can operate and sell without depending on the founder
+- Fractional CRO — Chief Risk Officer capability without the full-time cost; suited to financial services businesses navigating regulatory change or M&A
+- Data & MI Architecture — helping businesses own and understand their data, independent of SaaS platforms
+
+## Who we work with
+
+- UK SME founders (typically 10–200 employees) at performance, growth or exit inflection points
+- Financial services businesses (FCA/PRA regulated) navigating strategic or regulatory change
+- Businesses across financial services, hospitality, care, manufacturing, professional services and construction
+
+## Location
+
+Leicestershire, UK. Serving clients nationally across the United Kingdom.
+
+## Contact
+
+Email: info@tenexbp.co.uk
+Website: https://tenexbp.co.uk
