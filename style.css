@@ -808,6 +808,31 @@ body {
     color: #909090;
 }
 
+.footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.footer__social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer__social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.18s;
+}
+
+.footer__social-link:hover {
+    color: #F5C842;
+}
+
 .footer__bottom p {
     font-size: 0.75rem;
     color: var(--text-muted);
