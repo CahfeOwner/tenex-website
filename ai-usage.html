@@ -69,6 +69,7 @@
                         <tr>
                             <th>Processor</th>
                             <th>Risk level</th>
+                            <th>Data scope</th>
                             <th>Primary control</th>
                             <th>Transfer mechanism</th>
                         </tr>
@@ -77,24 +78,28 @@
                         <tr>
                             <td>Anthropic (Claude API)</td>
                             <td>Very low</td>
+                            <td>Client-sensitive permitted</td>
                             <td>Zero Data Retention active from May 2026</td>
                             <td>DPA with UK Addendum and SCCs; UK/EEA processing confirmed</td>
                         </tr>
                         <tr>
                             <td>Google Workspace</td>
                             <td>Low</td>
+                            <td>Client-sensitive permitted</td>
                             <td>Standard enterprise cloud under formal DPA</td>
                             <td>DPA with UK GDPR commitments; 180-day deletion</td>
                         </tr>
                         <tr>
                             <td>Wispr Flow</td>
                             <td>Managed</td>
+                            <td>Internal operational only</td>
                             <td>Privacy Mode always on; restricted to internal content only</td>
                             <td>SCCs not confirmed; permanently restricted to non-client data</td>
                         </tr>
                         <tr>
                             <td>Apple iCloud</td>
                             <td>Managed</td>
+                            <td>Internal operational only</td>
                             <td>Data classification; no sensitive client data in iCloud Drive</td>
                             <td>SCCs via Apple Ireland (EEA controller); no E2E encryption available to UK users</td>
                         </tr>
@@ -124,7 +129,7 @@
                 <p>Tenex stores its operational workspace — internal notes, research files, workspace configuration and temporary downloads — in iCloud Drive, synced across Mac and iPhone. Apple Distribution International Limited (Ireland) acts as the data controller for UK users; Apple Inc. (United States) processes data on its behalf.</p>
                 <p>International data transfers from the UK are governed by Standard Contractual Clauses, confirmed in Apple's published privacy terms. The controller entity is established in Ireland, within the EEA.</p>
                 <p>iCloud Drive operates under standard encryption: files are encrypted in transit and at rest, but Apple holds the encryption keys. Advanced Data Protection — which would provide end-to-end encryption with keys held only on trusted devices — is not available to UK users. Apple withdrew the feature from the UK in February 2025 rather than comply with a Technical Capability Notice issued by the UK Home Office under the Investigatory Powers Act 2016, which required a mechanism for government access to encrypted iCloud data. Apple is understood to be challenging the notice at the Investigatory Powers Tribunal. This encryption position applies to all UK Apple users; it is not specific to Tenex's configuration and cannot be changed by any individual user or organisation.</p>
-                <p>Tenex manages this through data classification discipline. Sensitive client deliverables, regulated engagement materials and confidential client data are handled within Google Workspace or delivered directly to clients; they are not stored in iCloud Drive. The iCloud environment holds internal operational content: notes, research, workspace configuration files and temporary downloads — typically reference documents, research materials and client-supplied files required for active work. Downloads are deleted when no longer required. Anything to be retained long-term is moved to Google Workspace before deletion from iCloud.</p>
+                <p>Tenex manages this through data classification discipline. Sensitive client deliverables, regulated engagement materials and confidential client data are handled within Google Workspace or delivered directly to clients; they are not stored in iCloud Drive. The iCloud environment holds internal operational content: notes, research, workspace configuration files and temporary downloads — typically reference documents, research materials and client-supplied files required for active work. Client-supplied files are treated as temporary working copies only and are not retained beyond the active task. Downloads are deleted when no longer required. Anything to be retained long-term is moved to Google Workspace before deletion from iCloud.</p>
 
                 <h2>How we support clients with AI</h2>
                 <p>Tenex works in two distinct modes, depending on the engagement.</p>
