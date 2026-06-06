@@ -26,7 +26,7 @@
             <div class="policy__header">
                 <p class="section__label">Legal</p>
                 <h1 class="policy__title">AI Usage Statement</h1>
-                <p class="policy__meta">Last updated: 25 May 2026</p>
+                <p class="policy__meta">Last updated: 6 June 2026</p>
             </div>
 
             <div class="policy__body">
@@ -94,7 +94,7 @@
                             <td>Managed</td>
                             <td>Internal operational only</td>
                             <td>Privacy Mode always on; restricted to internal content only</td>
-                            <td>SCCs not confirmed; permanently restricted to non-client data</td>
+                            <td>UK IDTA and UK Addendum to EU SCCs confirmed via DPA; UK users routed to Europe region (AWS)</td>
                         </tr>
                         <tr>
                             <td>Apple iCloud</td>
@@ -109,8 +109,8 @@
                 <p><strong>Wispr Flow (Wispr AI, Inc.)</strong></p>
                 <p>Tenex uses Wispr Flow for voice dictation — converting spoken notes and drafts to text for review and refinement. Wispr AI, Inc. acts as a data processor in this context, processing voice audio and transcribed text on Tenex's behalf.</p>
                 <p>Wispr Flow holds ISO 27001 (information security management) and SOC 2 Type II certification (security, availability and confidentiality), both independently audited.</p>
-                <p>The critical control is Privacy Mode, which Tenex operates with enabled at all times. With Privacy Mode active, dictation audio and transcribed text are processed in real time and immediately discarded — no data is retained on Wispr's servers, and data is not used for model improvement or AI training. Dictation content may pass through Wispr's sub-processor infrastructure during processing; under Privacy Mode, this processing is transient and nothing is stored at rest.</p>
-                <p>Standard Contractual Clauses or other UK GDPR international transfer mechanisms have not been explicitly confirmed in Wispr's published documentation. For this reason, Tenex limits its use of Wispr Flow to internal operational content — research, drafts, notes and planning — and does not dictate client-specific data, personally identifiable information or commercially sensitive material through the tool. If Wispr AI, Inc. is unable to confirm a UK GDPR-compliant transfer mechanism, Tenex will maintain this restriction as a permanent operational position.</p>
+                <p>The critical control is Privacy Mode, which Tenex operates with enabled at all times. With Privacy Mode active, dictation audio and transcribed text are processed in real time and immediately discarded — no data is retained on Wispr's servers, and data is not used for model improvement or AI training. Dictation content may pass through Wispr's sub-processor infrastructure during processing; under Privacy Mode, this processing is transient and nothing is stored at rest. Wispr has confirmed that this transient processing is governed by the SCCs and IDTA with supplementary technical measures, including TLS 1.2+ encryption in transit and server-side stripping of dictation content on arrival.</p>
+                <p>Wispr AI, Inc. has confirmed that transfers from UK-based users are covered by the UK International Data Transfer Addendum (IDTA) and the UK Addendum to the EU Standard Contractual Clauses, incorporated in their Data Processing Agreement. Wispr is not certified under the EU-US Data Privacy Framework; the applicable transfer mechanism is the SCCs and IDTA route. UK users route to Wispr's Europe region, hosted on AWS infrastructure. A Transfer Impact Assessment supporting reliance on these mechanisms is available on request from security@wispr.ai. Tenex continues to limit its use of Wispr Flow to internal operational content: research, drafts, notes and planning. Client-specific data, personally identifiable information and commercially sensitive material are not processed through the tool. This is a deliberate operational position maintained regardless of transfer mechanism confirmation.</p>
 
                 <p><strong>Google Workspace (Google LLC)</strong></p>
                 <p>Tenex operates its business communications and collaboration infrastructure — email, calendar, document storage and video calls — on Google Workspace. Google Drive additionally serves as the primary store for AI-generated outputs and operational workspace data arising from client engagements, including engagement records, task data and interaction logs. Google LLC acts as a data processor under a formal Cloud Data Processing Addendum, with Tenex as the data controller.</p>
