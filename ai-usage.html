@@ -26,7 +26,7 @@
             <div class="policy__header">
                 <p class="section__label">Legal</p>
                 <h1 class="policy__title">AI Usage Statement</h1>
-                <p class="policy__meta">Last updated: 6 June 2026</p>
+                <p class="policy__meta">Last updated: 13 July 2026</p>
             </div>
 
             <div class="policy__body">
@@ -62,7 +62,7 @@
                 <p>Copies of the ISO 27001 and ISO 42001 certificates are held on file and shared proactively at the outset of any engagement involving sensitive or regulated data. Clients may request copies of current certifications, a summary of any relevant DPIA findings, and written confirmation of Tenex's current AI tooling and data processing arrangements at any stage for due diligence or audit purposes. Contact <a href="mailto:info@tenexbp.co.uk">info@tenexbp.co.uk</a>.</p>
 
                 <h2>Other data processors</h2>
-                <p>In addition to Anthropic, three further services process operational data as part of how Tenex runs its business. Each operates under documented data processing terms and holds independent security certifications.</p>
+                <p>In addition to Anthropic, four further services process operational data as part of how Tenex runs its business. Each operates under documented data processing terms and holds independent security certifications.</p>
 
                 <table class="policy__table">
                     <thead>
@@ -103,6 +103,13 @@
                             <td>Data classification; no sensitive client data in iCloud Drive</td>
                             <td>SCCs via Apple Ireland (EEA controller); no E2E encryption available to UK users</td>
                         </tr>
+                        <tr>
+                            <td>Vercel</td>
+                            <td>Low</td>
+                            <td>Client data permitted (encrypted deliverables only)</td>
+                            <td>Client-side encryption prior to deployment — Vercel stores and serves ciphertext only</td>
+                            <td>2021 SCCs (Module Two) and UK IDTA; primary processing in the US on AWS/Azure/GCP infrastructure</td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -130,6 +137,10 @@
                 <p>International data transfers from the UK are governed by Standard Contractual Clauses, confirmed in Apple's published privacy terms. The controller entity is established in Ireland, within the EEA.</p>
                 <p>iCloud Drive operates under standard encryption: files are encrypted in transit and at rest, but Apple holds the encryption keys. Advanced Data Protection — which would provide end-to-end encryption with keys held only on trusted devices — is not available to UK users. Apple withdrew the feature from the UK in February 2025 rather than comply with a Technical Capability Notice issued by the UK Home Office under the Investigatory Powers Act 2016, which required a mechanism for government access to encrypted iCloud data. Apple is understood to be challenging the notice at the Investigatory Powers Tribunal. This encryption position applies to all UK Apple users; it is not specific to Tenex's configuration and cannot be changed by any individual user or organisation.</p>
                 <p>Tenex manages this through data classification discipline. Sensitive client deliverables, regulated engagement materials and confidential client data are handled within Google Workspace or delivered directly to clients; they are not stored in iCloud Drive. The iCloud environment holds internal operational content: notes, research, workspace configuration files and temporary downloads — typically reference documents, research materials and client-supplied files required for active work. Client-supplied files are treated as temporary working copies only and are not retained beyond the active task. Downloads are deleted when no longer required. Anything to be retained long-term is moved to Google Workspace before deletion from iCloud.</p>
+
+                <p><strong>Vercel</strong></p>
+                <p>Tenex uses Vercel to host client-facing deliverables — principally interactive MI dashboards built from client data. Where a dashboard contains client-sensitive information, the underlying data is encrypted client-side before deployment; the deployed page itself is stored and served as ciphertext, decrypted only in the recipient's browser on password entry. Vercel's infrastructure therefore never holds readable client data.</p>
+                <p>Vercel holds SOC 2 Type 2 certification and undertakes annual independent penetration testing. Vercel acts as a data processor for customer data under its Data Processing Addendum, incorporating the 2021 EU Standard Contractual Clauses (Module Two, controller-to-processor) together with the UK International Data Transfer Addendum, with the Information Commissioner as the relevant supervisory authority. Primary processing occurs in the United States, with infrastructure operated across AWS, Microsoft Azure and Google Cloud Platform.</p>
 
                 <h2>How we support clients with AI</h2>
                 <p>Tenex works in two distinct modes, depending on the engagement.</p>
